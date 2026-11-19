@@ -1,0 +1,10 @@
+
+=== TESTS SCP DATAHELIX ===
+
+[PASS] cloudtrail:StopLogging -> DENY
+[PASS] cloudtrail:DeleteTrail -> DENY
+[PASS] cloudtrail:UpdateTrail -> DENY
+[PASS] organizations:LeaveOrganization -> DENY
+[PASS] s3:ListAllMyBuckets -> NO EXPLICIT DENY
+
+Résultat : 5/5 tests réussis
