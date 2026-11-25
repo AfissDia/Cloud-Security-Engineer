@@ -8,9 +8,9 @@ Durée cible : 5 à 7 minutes. Utiliser les preuves si MiniStack n'est pas enti�
 
 ## 2. Expliquer l'architecture
 
-Montrer `ARCHITECTURE.md` et le module `infra/network/`.
+Afficher le schéma [Architecture](diagrams/architecture.png), puis le schéma [Chaîne SOC](diagrams/flux-journaux.png). Le module réseau est disponible dans le dépôt de code complet sous `infra/network/`.
 
-« Nous avons un compte de management, cinq comptes membres, deux unités organisationnelles, une SCP et trois VPC distincts pour PROD, STAGING et DEV. »
+« L’architecture comprend un compte de management, cinq comptes membres, deux unités organisationnelles, une SCP et trois VPC distincts pour PROD, STAGING et DEV. »
 
 ## 3. Montrer la chaîne SOC
 
@@ -30,4 +30,4 @@ Ouvrir `evidence/object-lock/test-results.md` et le rapport `SECURITY-REPORT.md`
 
 « L'environnement est simulé : l'export CloudTrail vers S3 a été manuel, certaines autorisations ne sont pas totalement testées et plusieurs services n'ont pas conservé leur état après un redémarrage inattendu. Le code et les preuves ont été conservés pour permettre une reprise. »
 
-« Ce projet m'a permis de pratiquer le Cloud Security, l'IaC avec OpenTofu, la journalisation CloudTrail et les premières détections SOC. »
+« Ce laboratoire illustre les concepts de Cloud Security, l'IaC avec OpenTofu, la journalisation CloudTrail et les premières détections SOC. »

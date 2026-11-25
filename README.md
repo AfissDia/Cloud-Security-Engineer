@@ -8,32 +8,15 @@ L'objectif est de construire une Landing Zone AWS simulée, de séparer les envi
 
 ## Architecture
 
-```text
-                        OpenTofu + AWS CLI
-                                |
-                    MiniStack - localhost:4566
-                                |
-                   Management - 111111111111
-                                |
-                    AWS Organizations + SCP
-                       /                  \
-             OU Workloads                OU Security
-            /     |     \                /          \
-          PROD  STAGING  DEV          SECURITY    LOG-ARCHIVE
-           |      |      |                |            |
-          VPC    VPC    VPC           Audit IAM    S3 sécurisé
-           |      |      |                |            |
-          SG     SG     SG            Lecture DEV   Object Lock
-                                                        ^
-                 CloudTrail organisationnel              |
-                         |                               |
-                         +---- export JSON manuel -------+
-                                          |
-                                   Détecteur Python
-                                   DET-001 à DET-003
-```
+![Architecture logique multi-comptes de DataHelix](diagrams/architecture.png)
 
-Les VPC ne disposent ni de connexion entre eux ni de passerelle Internet dans le module de base. Les groupes de sécurité gérés sont déclarés sans règles entrantes et sortantes. Sur MiniStack, cela ne constitue pas un test de trafic réseau réel.
+L'organisation comprend un compte Management et cinq comptes membres répartis entre deux unités organisationnelles : **Workloads** (PROD, STAGING, DEV) et **Security** (SECURITY, LOG-ARCHIVE).
+
+La chaîne de journalisation et de détection est présentée séparément pour rester lisible :
+
+![Flux de journalisation et de détection](diagrams/flux-journaux.png)
+
+Le schéma d'ensemble, les rôles de chaque compte et les limites de l'émulateur sont détaillés dans [ARCHITECTURE.md](ARCHITECTURE.md). Les fichiers sources `.dot` permettent de modifier les diagrammes.
 
 ## Ce qui a été réalisé
 
@@ -87,12 +70,20 @@ evidence/
   security-scans/
 docs/
   limitations-ministack.md
+  GUIDE-LECTEUR.md
+diagrams/
+  architecture.png, architecture.svg, architecture.dot
+  flux-journaux.png, flux-journaux.svg, flux-journaux.dot
 PROCEDURE.md
 ARCHITECTURE.md
 SECURITY-REPORT.md
 ```
 
-Certains dossiers et fichiers peuvent être ajoutés au fil de la documentation. Les modules OpenTofu utilisés dans ce dépôt restent la source de vérité pour les ressources à créer.
+Le **code OpenTofu** du dépôt est la source de vérité pour les ressources à créer. Ce pack documentaire seul ne contient pas les modules `.tf` du laboratoire. Pour publier un dépôt complet, ajouter les fichiers `infra/`, `scripts/`, `tests/` et les preuves partageables après contrôle des données sensibles. Voir [GUIDE-LECTEUR.md](docs/GUIDE-LECTEUR.md).
+
+## Lire et réutiliser le projet
+
+Le dépôt est conçu pour être lisible sans connaître son historique : commencer par le schéma, poursuivre avec les validations, puis suivre la procédure si le code du laboratoire est disponible. **Les identifiants de comptes et de bucket mentionnés sont des exemples issus d’une exécution locale**, à remplacer lors d’un nouveau déploiement.
 
 ## Refaire le laboratoire
 

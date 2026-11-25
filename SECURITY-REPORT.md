@@ -1,5 +1,8 @@
 # Rapport de sécurité - DataHelix
 
+**Périmètre du rapport :** laboratoire AWS simulé avec MiniStack. Les résultats cités sont les observations réalisées pendant le projet et ne constituent ni une certification SOC 2 ni une validation sur AWS réel. Un redémarrage ultérieur a entraîné une perte partielle de ressources simulées. Les preuves et limitations sont documentées séparément.
+
+
 ## 1. Périmètre
 
 Audit de la Landing Zone AWS simulée avec MiniStack, OpenTofu et cinq modules IaC : Organizations, IAM DEV, LOG-ARCHIVE, CloudTrail et Network.

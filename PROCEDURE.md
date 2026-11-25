@@ -1,8 +1,20 @@
 # PROCEDURE - Reproduire DataHelix en une journée
 
-Cette procédure reprend **le projet existant** (ses fichiers `.tf`, ses scripts et ses tests). Elle n'est pas un générateur d'infrastructure à partir d'un répertoire vide.
+Cette procédure s'adresse à toute personne disposant du **dépôt de code complet** (fichiers `.tf`, scripts et tests). Elle n'est pas un générateur d'infrastructure à partir d'un répertoire vide. Le pack de documentation est fourni séparément du code local du laboratoire. Voir [le guide de lecture](docs/GUIDE-LECTEUR.md).
 
 Objectif : déployer le laboratoire, vérifier les composants et conserver des preuves **en une journée** si Ubuntu, le dépôt et les dépendances sont disponibles. MiniStack est un émulateur : tous les services ne reproduisent pas AWS réel et certains états ne survivent pas à un redémarrage brutal.
+
+## 0. Pré-requis pour une reproduction par une autre personne
+
+- Ubuntu ou un environnement Linux compatible, Python 3, AWS CLI, OpenTofu et MiniStack installés.
+- Le **dépôt DataHelix complet** avec les cinq stacks IaC et les scripts. Les fichiers Markdown seuls ne suffisent pas.
+- Connexion réseau pour récupérer les dépendances absentes lors du premier `tofu init`.
+- Plusieurs Go libres sur le disque et un terminal réservé à MiniStack.
+- Une installation locale **sans véritables identifiants AWS**. Les clés `test` et les numéros de compte servent uniquement à MiniStack.
+
+Les commandes supposent que le dépôt est placé dans `~/projet7-datahelix`. Adapter ce chemin si nécessaire. Les identifiants de comptes `431122...`, `888031...`, etc. sont les exemples d'une ancienne exécution : les remplacer après création d'une nouvelle organisation.
+
+**Durée** : une journée constitue une cible de reproduction sur un poste déjà préparé. Un premier téléchargement des dépendances ou un problème de persistance peut prendre plus de temps.
 
 ## 0. Plan de la journée
 
@@ -409,7 +421,16 @@ Vérifier avec `git status` **avant** de publier. Les données persistantes et l
 | Ubuntu saturé | Copies de providers `.terraform` | Diagnostiquer avec `du` et `df`, ne supprimer que les caches vérifiés |
 | Deux commandes donnent des règles SG différentes | Filtrage ambigu | Vérifier par ID de Security Group |
 
-## 15. Règle finale pour les démonstrations
+## 15. Vérification de fin de journée
+
+- Vérifier les six comptes et le rattachement des OU et SCP.
+- Vérifier l'identité utilisée dans chaque stack avant tout `tofu plan`.
+- Vérifier que la configuration S3 et le rôle IAM sont présents.
+- Vérifier que les trois VPC, le Trail et Object Lock existent **dans MiniStack à cet instant**, sinon signaler explicitement la perte d'état.
+- Conserver séparément les preuves des tests réels, les jeux de données synthétiques et les états privés.
+- Consulter [SECURITY-REPORT.md](SECURITY-REPORT.md) pour les écarts restant ouverts.
+
+## 16. Règle finale pour les démonstrations
 
 - Avant une démo, vérifier les six comptes puis la présence du Trail, du bucket et des VPC.
 - Si un service a perdu son état, **ne pas masquer le problème**. Montrer le code IaC et les preuves enregistrées, puis expliquer les limites.
