@@ -11,3 +11,7 @@
 .env.*
 __pycache__/
 *.pyc
+
+# MiniStack local persistence
+ministack-data/
+.venv-checkov/

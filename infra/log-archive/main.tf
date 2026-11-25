@@ -4,7 +4,7 @@
 # 1. Bucket S3 dans LOG-ARCHIVE
 
 resource "aws_s3_bucket" "cloudtrail_logs" {
-  bucket = "datahelix-log-archive-110696054523"
+  bucket = "datahelix-log-archive-888031631734"
 
   tags = {
     Project     = "DataHelix"

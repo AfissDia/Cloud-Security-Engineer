@@ -13,7 +13,7 @@ resource "aws_iam_role" "security_audit" {
       Effect = "Allow"
 
       Principal = {
-        AWS = "arn:aws:iam::998019410638:root"
+        AWS = "arn:aws:iam::616337743862:root"
       }
 
       Action = "sts:AssumeRole"

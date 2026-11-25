@@ -1,0 +1,28 @@
+{
+  "alerts": [
+    {
+      "rule_id": "DET-001",
+      "severity": "CRITICAL",
+      "event_name": "StopLogging",
+      "description": "Arr\u00eat de CloudTrail",
+      "account": "111111111111",
+      "time": "2026-11-23T16:00:00+01:00"
+    },
+    {
+      "rule_id": "DET-002",
+      "severity": "HIGH",
+      "event_name": "UpdatePolicy",
+      "description": "Modification d'une politique SCP",
+      "account": "111111111111",
+      "time": "2026-11-23T16:01:00+01:00"
+    },
+    {
+      "rule_id": "DET-003",
+      "severity": "HIGH",
+      "event_name": "DeletePublicAccessBlock",
+      "description": "Suppression du blocage public S3",
+      "account": "111111111111",
+      "time": "2026-11-23T16:02:00+01:00"
+    }
+  ]
+}

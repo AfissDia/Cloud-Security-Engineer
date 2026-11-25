@@ -1,0 +1,37 @@
+{
+    "Events": [
+        {
+            "EventId": "29285d14-84f3-4d15-9a6b-391687ecacd6",
+            "EventName": "ListAccounts",
+            "ReadOnly": "true",
+            "AccessKeyId": "111111111111",
+            "EventTime": "2026-11-23T14:55:10.404974+01:00",
+            "EventSource": "organizations.amazonaws.com",
+            "Username": "111111111111",
+            "Resources": [],
+            "CloudTrailEvent": "{\"eventVersion\": \"1.08\", \"userIdentity\": {\"type\": \"IAMUser\", \"principalId\": \"111111111111\", \"arn\": \"arn:aws:iam::111111111111:user/111111111111\", \"accountId\": \"111111111111\", \"accessKeyId\": \"111111111111\", \"userName\": \"111111111111\"}, \"eventTime\": \"2026-11-23T13:55:10Z\", \"eventSource\": \"organizations.amazonaws.com\", \"eventName\": \"ListAccounts\", \"awsRegion\": \"eu-west-3\", \"sourceIPAddress\": \"127.0.0.1\", \"userAgent\": \"aws-cli/2.40.1 md/awscrt#0.38.1 ua/2.1 os/linux#6.8.0-149-generic md/arch#x86_64 lang/python#3.14.8 md/pyimpl#CPython m/Z,g,E,C,N,b cfg/retry-mode#standard md/installer#exe sid/f0a159a538ab md/distrib#ubuntu.22 md/prompt#off md/command#organizations.list-accounts\", \"requestParameters\": {}, \"responseElements\": null, \"requestID\": \"60687d36-10a8-4ee7-b7b4-a7a8f0c3cbe0\", \"eventID\": \"29285d14-84f3-4d15-9a6b-391687ecacd6\", \"eventType\": \"AwsApiCall\", \"readOnly\": \"true\", \"recipientAccountId\": \"111111111111\"}"
+        },
+        {
+            "EventId": "5249bdf4-4687-48ae-8f45-dd91fa7ac43c",
+            "EventName": "POST.sts",
+            "ReadOnly": "false",
+            "AccessKeyId": "111111111111",
+            "EventTime": "2026-11-23T14:55:09.329229+01:00",
+            "EventSource": "sts.amazonaws.com",
+            "Username": "111111111111",
+            "Resources": [],
+            "CloudTrailEvent": "{\"eventVersion\": \"1.08\", \"userIdentity\": {\"type\": \"IAMUser\", \"principalId\": \"111111111111\", \"arn\": \"arn:aws:iam::111111111111:user/111111111111\", \"accountId\": \"111111111111\", \"accessKeyId\": \"111111111111\", \"userName\": \"111111111111\"}, \"eventTime\": \"2026-11-23T13:55:09Z\", \"eventSource\": \"sts.amazonaws.com\", \"eventName\": \"POST.sts\", \"awsRegion\": \"eu-west-3\", \"sourceIPAddress\": \"127.0.0.1\", \"userAgent\": \"aws-cli/2.40.1 md/awscrt#0.38.1 ua/2.1 os/linux#6.8.0-149-generic md/arch#x86_64 lang/python#3.14.8 md/pyimpl#CPython m/Z,g,E,N,b cfg/retry-mode#standard md/installer#exe sid/f0a159a538ab md/distrib#ubuntu.22 md/prompt#off md/command#sts.get-caller-identity\", \"requestParameters\": {\"Action\": \"GetCallerIdentity\", \"Version\": \"2011-06-15\"}, \"responseElements\": null, \"requestID\": \"6cd9cd30-a434-4376-843f-02f5af12127e\", \"eventID\": \"5249bdf4-4687-48ae-8f45-dd91fa7ac43c\", \"eventType\": \"AwsApiCall\", \"readOnly\": \"false\", \"recipientAccountId\": \"111111111111\"}"
+        },
+        {
+            "EventId": "04214260-6c90-4493-8dd3-a6f700033129",
+            "EventName": "ListBuckets",
+            "ReadOnly": "true",
+            "AccessKeyId": "111111111111",
+            "EventTime": "2026-11-23T14:22:13.999664+01:00",
+            "EventSource": "s3.amazonaws.com",
+            "Username": "111111111111",
+            "Resources": [],
+            "CloudTrailEvent": "{\"eventVersion\": \"1.08\", \"userIdentity\": {\"type\": \"IAMUser\", \"principalId\": \"111111111111\", \"arn\": \"arn:aws:iam::111111111111:user/111111111111\", \"accountId\": \"111111111111\", \"accessKeyId\": \"111111111111\", \"userName\": \"111111111111\"}, \"eventTime\": \"2026-11-23T13:22:13Z\", \"eventSource\": \"s3.amazonaws.com\", \"eventName\": \"ListBuckets\", \"awsRegion\": \"eu-west-3\", \"sourceIPAddress\": \"127.0.0.1\", \"userAgent\": \"aws-cli/2.40.1 md/awscrt#0.38.1 ua/2.1 os/linux#6.8.0-149-generic md/arch#x86_64 lang/python#3.14.8 md/pyimpl#CPython m/Z,g,E,C,N,b cfg/retry-mode#standard md/installer#exe sid/a6eb2c392241 md/distrib#ubuntu.22 md/prompt#off md/command#s3api.list-buckets\", \"requestParameters\": {}, \"responseElements\": null, \"requestID\": \"d81a099b-ba5b-403a-a7cf-65e75307e42b\", \"eventID\": \"04214260-6c90-4493-8dd3-a6f700033129\", \"eventType\": \"AwsApiCall\", \"readOnly\": \"true\", \"recipientAccountId\": \"111111111111\"}"
+        }
+    ]
+}

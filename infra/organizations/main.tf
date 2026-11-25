@@ -1,7 +1,7 @@
 variable "root_id" {
   description = "Identifiant de la racine AWS Organizations"
   type        = string
-  default     = "r-d4e9d6"
+  default     = "r-5d9efe"
 }
 
 resource "aws_organizations_organizational_unit" "workloads" {
