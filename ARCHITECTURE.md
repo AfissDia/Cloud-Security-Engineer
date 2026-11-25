@@ -4,7 +4,9 @@
 
 DataHelix est une **Landing Zone AWS multi-comptes simulée en local**. OpenTofu décrit les ressources et MiniStack expose les API AWS sur `http://127.0.0.1:4566`.
 
-![Architecture logique multi-comptes de DataHelix](diagrams/architecture.png)
+![Vue d’ensemble DataHelix](diagrams/architecture-principale.png)
+
+Vue technique modifiable : ![Architecture logique multi-comptes](diagrams/architecture.png)
 
 - **Management** - administration d'AWS Organizations, gouvernance et configuration du Trail.
 - **OU Workloads** - trois comptes applicatifs isolés : PROD, STAGING et DEV.

@@ -438,3 +438,10 @@ Vérifier avec `git status` **avant** de publier. Les données persistantes et l
 - Après une séance réussie, arrêter MiniStack proprement et sauvegarder les fichiers avant l'arrêt du PC.
 
 La reconstruction complète en une journée est un **objectif de travail**, non une garantie liée à l'émulateur et à ses limites.
+
+## Compléments de rendu
+
+- [Account Factory](infra/account-factory/README.md) : proposition de module, non exécutée.
+- [Orchestrateur](scripts/deploy-all.sh) : revue des plans, non validé sur le dépôt local.
+- [Runbooks](RUNBOOKS.md) : incident et restauration.
+- [Plan de tests](TESTS.md) : résultats observés et tests en attente.

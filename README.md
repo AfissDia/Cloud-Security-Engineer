@@ -8,7 +8,9 @@ L'objectif est de construire une Landing Zone AWS simulée, de séparer les envi
 
 ## Architecture
 
-![Architecture logique multi-comptes de DataHelix](diagrams/architecture.png)
+![Vue d’ensemble DataHelix avec comptes, VPC et chaîne de détection](diagrams/architecture-principale.png)
+
+Schéma technique modifiable : [architecture.dot](diagrams/architecture.dot) et [SVG](diagrams/architecture.svg).
 
 L'organisation comprend un compte Management et cinq comptes membres répartis entre deux unités organisationnelles : **Workloads** (PROD, STAGING, DEV) et **Security** (SECURITY, LOG-ARCHIVE).
 
@@ -107,3 +109,15 @@ DevSecOps - OpenTofu, analyse IaC, modules réutilisables et reprise d'infrastru
 SOC / Blue Team - collecte de journaux, détection Python et preuves d'investigation.
 
 GRC - revue des écarts, limites des contrôles et documentation d'audit.
+
+## Rendu complet et documents complémentaires
+
+- [Note de cadrage](CADRAGE.md)
+- [Dossier architecture et sécurité](SECURITE-CIBLE.md)
+- [Plan de tests et résultats](TESTS.md)
+- [Runbooks](RUNBOOKS.md)
+- [Estimation des coûts AWS](COUTS-AWS.md)
+- [Module Account Factory proposé](infra/account-factory/README.md)
+- [Intégration dans le dépôt de code local](INTEGRATION.md)
+
+**État de clôture documentaire :** les éléments livrés sont consolidés, mais la centralisation native CloudTrail, le module Account Factory et le déploiement en une commande ne sont pas validés fonctionnellement.
